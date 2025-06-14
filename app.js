@@ -28,6 +28,7 @@ const clickSound = new Audio("click.mp3");
 
 
 let turnO = true;//playerX,playerO
+let count=0; //To track draw
 
 const winPatterns=[
     [0,1,2],
@@ -58,14 +59,21 @@ boxes.forEach((box) => {
             turnO = true;
         }
         box.disabled = true;
+        count++;
 
-        checkWinner();
+    let isWinner = checkWinner();
+
+    if (count === 9 && !isWinner) {
+      gameDraw();
+    }
+        // checkWinner();
     });
 });
 
 
 const resetGame=()=>{
     turnO=true;
+    count = 0;
     enableBoxes();
     msgContainer.classList.add("hide");
 }
@@ -111,12 +119,20 @@ const checkWinner=()=>{
             console.log("winner",pos1Val);
             
             showWinner(pos1Val);
+         return true;
+            }
         }
     }
+    return false;
+};
 
-    }
+const gameDraw = () =>{
+    msg.innerText=`Game was a Draw`;
+    msgContainer.classList.remove("hide");
+    disableBoxes();
 }
-
 
 newBtn.addEventListener("click",resetGame);
 resetbtn.addEventListener("click",resetGame);
+
+
