@@ -4,7 +4,7 @@ A responsive, interactive **Tic-Tac-Toe** game built using **HTML, CSS, and Java
 
 ## 🔗 Live Demo
 
-👉 [Play Now on Vercel](https://vercel.com/akansha143s-projects/tic-tac-toe/6qWXoJHh1tfRbDvP4xKhURhQhcoa)
+👉 [Play Now on Vercel](https://tic-tac-toe-orcin-two-13.vercel.app/)
 
 ---
 
